@@ -1,0 +1,494 @@
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+WARNING:databricks.sql.client:[WARN] pyarrow is not installed by default since databricks-sql-connector 4.0.0,any arrow specific api (e.g. fetchmany_arrow) and cloud fetch will be disabled.If you need these features, please run pip install pyarrow or pip install databricks-sql-connector[pyarrow] to install
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d537-3164-1344-86ee-1a783d6cbe4a
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d537-3164-1344-86ee-1a783d6cbe4a
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d538-cd76-1842-9fb8-63fb71d29a20
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d538-cd76-1842-9fb8-63fb71d29a20
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d538-d9de-1eeb-ad82-4555311a44a8
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d538-d9de-1eeb-ad82-4555311a44a8
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-0bbe-1644-b505-3a765a1bbfae
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-0bbe-1644-b505-3a765a1bbfae
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-11c4-1464-94a9-7596e2399c68
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-11c4-1464-94a9-7596e2399c68
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-1978-1f05-b1d4-0e3f836137f0
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-1978-1f05-b1d4-0e3f836137f0
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-92b5-1d5c-b7d7-24c4c80c1552
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-92b5-1d5c-b7d7-24c4c80c1552
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-9e66-1c2f-a368-474ca52b1633
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-9e66-1c2f-a368-474ca52b1633
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-9fa3-1e2d-b961-fe6fec3d8d55
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-9fa3-1e2d-b961-fe6fec3d8d55
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d539-cd0d-161c-834f-bf75fb4c6c6f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d539-cd0d-161c-834f-bf75fb4c6c6f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53a-2e59-1a76-8436-17eb071f8631
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53a-2e59-1a76-8436-17eb071f8631
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53a-dd0e-142b-8b46-9d80637d38f5
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53a-dd0e-142b-8b46-9d80637d38f5
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53a-dea0-17e4-8c61-a5a7675f0216
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53a-dea0-17e4-8c61-a5a7675f0216
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53b-e477-14fa-a27b-5ae19db773ca
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53b-e477-14fa-a27b-5ae19db773ca
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53b-e979-1eb6-9bcb-0daf5691ebfe
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53b-e979-1eb6-9bcb-0daf5691ebfe
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53d-667c-17ec-9c99-224bdff0296f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53d-667c-17ec-9c99-224bdff0296f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53d-73c4-1613-bb89-4dea929a4b92
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53d-73c4-1613-bb89-4dea929a4b92
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53d-871c-16a5-b390-780b50885f98
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53d-871c-16a5-b390-780b50885f98
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53d-8d2f-16df-abf0-5a0f01e0077f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53d-8d2f-16df-abf0-5a0f01e0077f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53d-949f-1821-9809-1a579b3363e4
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53d-96dc-18b7-b9a0-469b3e2649b1
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53d-949f-1821-9809-1a579b3363e4
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53d-96dc-18b7-b9a0-469b3e2649b1
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-3fb5-14b1-85f0-75c55e46dc72
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-3fb5-14b1-85f0-75c55e46dc72
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-4132-1385-a9c6-c90ea1757565
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-4132-1385-a9c6-c90ea1757565
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-57ee-1264-809e-ed1b69877617
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-57ee-1264-809e-ed1b69877617
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-5b09-1fb5-9991-94d0d1f1af5f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-5b09-1fb5-9991-94d0d1f1af5f
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-e501-15ac-85b6-9ce9b8cd5929
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-e501-15ac-85b6-9ce9b8cd5929
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-e985-1d19-a9e5-e2603b00ce42
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-e985-1d19-a9e5-e2603b00ce42
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-f0d2-1d15-beff-0fbd46d33629
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-f0d2-1d15-beff-0fbd46d33629
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53e-f338-128f-885d-721e7c924848
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53e-f338-128f-885d-721e7c924848
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+WARNING:databricks.sql.client:[WARN] pyarrow is not installed by default since databricks-sql-connector 4.0.0,any arrow specific api (e.g. fetchmany_arrow) and cloud fetch will be disabled.If you need these features, please run pip install pyarrow or pip install databricks-sql-connector[pyarrow] to install
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-284e-1b88-9924-9c490023c9a2
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-284e-1b88-9924-9c490023c9a2
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-2eec-169f-83c3-38b298e7d0e0
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-2eec-169f-83c3-38b298e7d0e0
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-30f7-120e-b8af-ea18e3df5d21
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-30f7-120e-b8af-ea18e3df5d21
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-4678-1f3d-a33b-447790c9b103
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-4678-1f3d-a33b-447790c9b103
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-4883-1072-8f73-71d7cb1ce9e6
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-4883-1072-8f73-71d7cb1ce9e6
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-c0d3-10ca-a026-80553d5d2937
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-c0d3-10ca-a026-80553d5d2937
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d53f-d9ac-1276-9998-6ff3debb86af
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d53f-d9ac-1276-9998-6ff3debb86af
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d540-bdaf-1d90-97f1-ef61abaf963c
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d540-bdaf-1d90-97f1-ef61abaf963c
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d540-c614-1bac-ab90-fd541acd955d
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d540-c614-1bac-ab90-fd541acd955d
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d540-dc6a-19d9-9384-e1826596bc3d
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d540-dc6a-19d9-9384-e1826596bc3d
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d540-de24-1ba0-ad5b-0d478fb256b7
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d540-de24-1ba0-ad5b-0d478fb256b7
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+WARNING:databricks.sql.client:[WARN] pyarrow is not installed by default since databricks-sql-connector 4.0.0,any arrow specific api (e.g. fetchmany_arrow) and cloud fetch will be disabled.If you need these features, please run pip install pyarrow or pip install databricks-sql-connector[pyarrow] to install
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d543-6b23-1cc2-a481-e17b34545ee8
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d543-6b23-1cc2-a481-e17b34545ee8
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+WARNING:databricks.sql.client:[WARN] pyarrow is not installed by default since databricks-sql-connector 4.0.0,any arrow specific api (e.g. fetchmany_arrow) and cloud fetch will be disabled.If you need these features, please run pip install pyarrow or pip install databricks-sql-connector[pyarrow] to install
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d543-cc77-12b5-bab5-713ea27d7bc9
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d543-cc77-12b5-bab5-713ea27d7bc9
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d544-c3c3-1cb9-9fe4-7b5d24c66dfd
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d544-c3c3-1cb9-9fe4-7b5d24c66dfd
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d544-c56b-1a9f-811c-1f3a879225e9
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d544-c56b-1a9f-811c-1f3a879225e9
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d544-d555-1df9-99c3-888df1bdebe0
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d544-d555-1df9-99c3-888df1bdebe0
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d544-d953-1ba5-af2f-c85e70d1d3d3
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d544-d953-1ba5-af2f-c85e70d1d3d3
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d544-e173-15fb-8f56-55a9f9a8a735
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d544-e173-15fb-8f56-55a9f9a8a735
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK

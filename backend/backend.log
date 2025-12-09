@@ -1,0 +1,1051 @@
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-5164-1bd8-b36d-0427cf22c650
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Database initialization failed: [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`hive_metastore`.`default`.`holiday_shifts`'). The associated location ('dbfs:/user/hive/warehouse/holiday_shifts') is not empty and also not a Delta table.
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 18, in init_db
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS holiday_shifts (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    """)
+    ^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`hive_metastore`.`default`.`holiday_shifts`'). The associated location ('dbfs:/user/hive/warehouse/holiday_shifts') is not empty and also not a Delta table.
+
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-5610-1641-952f-b1568abdbecf
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Error in get_shifts: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 54, in get_shifts
+    cursor.execute("SELECT id, name, holiday_date, created_at FROM holiday_shifts")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-75ee-1935-9d63-457030c8bd21
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Database initialization failed: [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`hive_metastore`.`default`.`holiday_shifts`'). The associated location ('dbfs:/user/hive/warehouse/holiday_shifts') is not empty and also not a Delta table.
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 23, in init_db
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS holiday_shifts (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ) USING DELTA
+        ^^^^^^^^^^^^^
+    """)
+    ^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`hive_metastore`.`default`.`holiday_shifts`'). The associated location ('dbfs:/user/hive/warehouse/holiday_shifts') is not empty and also not a Delta table.
+
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-7719-14c9-961f-7bda48e86725
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Error in get_shifts: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 54, in get_shifts
+    cursor.execute("SELECT id, name, holiday_date, created_at FROM holiday_shifts")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-8dea-1d34-a589-61d4cbe12595
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Database initialization failed: [WRONG_COLUMN_DEFAULTS_FOR_DELTA_FEATURE_NOT_ENABLED] Failed to execute CREATE TABLE command because it assigned a column DEFAULT value,
+but the corresponding table feature was not enabled. Please retry the command again
+after executing ALTER TABLE tableName SET
+TBLPROPERTIES('delta.feature.allowColumnDefaults' = 'supported').
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 23, in init_db
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS holiday_shifts_v2 (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ) USING DELTA
+        ^^^^^^^^^^^^^
+    """)
+    ^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [WRONG_COLUMN_DEFAULTS_FOR_DELTA_FEATURE_NOT_ENABLED] Failed to execute CREATE TABLE command because it assigned a column DEFAULT value,
+but the corresponding table feature was not enabled. Please retry the command again
+after executing ALTER TABLE tableName SET
+TBLPROPERTIES('delta.feature.allowColumnDefaults' = 'supported').
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-a319-18b3-8092-afe1d360fc01
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Database initialization failed: [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`hive_metastore`.`default`.`holiday_shifts_v2`'). The associated location ('dbfs:/user/hive/warehouse/holiday_shifts_v2') is not empty and also not a Delta table.
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 23, in init_db
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS holiday_shifts_v2 (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ) USING DELTA
+        ^^^^^^^^^^^^^
+    """)
+    ^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [DELTA_CREATE_TABLE_WITH_NON_EMPTY_LOCATION] Cannot create table ('`hive_metastore`.`default`.`holiday_shifts_v2`'). The associated location ('dbfs:/user/hive/warehouse/holiday_shifts_v2') is not empty and also not a Delta table.
+
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-ac8b-1b48-8329-1de4d421da68
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Error in get_shifts: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 54, in get_shifts
+    cursor.execute("SELECT id, name, holiday_date, created_at FROM holiday_shifts_v2")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-bdd1-13d7-87bf-263cf9390108
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-bdd1-13d7-87bf-263cf9390108
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-c660-14a9-9fcf-9b3dcdc3f8e4
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Error in get_shifts: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 54, in get_shifts
+    cursor.execute("SELECT id, name, holiday_date, created_at FROM holiday_shifts_v3")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-d091-1efc-9a85-a570894a0423
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Error in get_shifts: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 54, in get_shifts
+    cursor.execute("SELECT id, name, holiday_date, created_at FROM holiday_shifts_v3")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-e81b-1d8d-ab2f-b45398b61e1b
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-e81b-1d8d-ab2f-b45398b61e1b
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-ee9b-10ad-9001-c20d965d7925
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Error in get_shifts: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 54, in get_shifts
+    cursor.execute("SELECT id, name, holiday_date, created_at FROM hive_metastore.default.holiday_shifts_v3")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [TABLE_OR_VIEW_NOT_FOUND] The table or view `holiday_shifts` cannot be found. Verify the spelling and correctness of the schema and catalog.
+If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS. SQLSTATE: 42P01; line 1 pos 47
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d526-fc9c-1331-a57c-4ab85d7ce6c1
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-fc9c-1331-a57c-4ab85d7ce6c1
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:databricks.sql.session:Closing session 01f0d526-5610-1641-952f-b1568abdbecf
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-7719-14c9-961f-7bda48e86725
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-ac8b-1b48-8329-1de4d421da68
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-c660-14a9-9fcf-9b3dcdc3f8e4
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-d091-1efc-9a85-a570894a0423
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d526-ee9b-10ad-9001-c20d965d7925
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d527-4c63-126c-b1d5-59598e9166cc
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d527-4c63-126c-b1d5-59598e9166cc
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 403 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 403, message: Forbidden
+ERROR:databricks.sql.backend.thrift_backend:ThriftBackend.attempt_request: Exception: 
+INFO:databricks.sql.backend.thrift_backend:Error during request to server: : Invalid access token.. : {"method": "OpenSession", "session-id": null, "query-id": null, "http-code": 403, "error-message": ": Invalid access token.", "original-exception": "", "no-retry-reason": "non-retryable error", "bounded-retry-delay": null, "attempt": "1/30", "elapsed-seconds": "1.1370508670806885/900.0"}
+ERROR:root:Database initialization failed: Error during request to server: : Invalid access token.. 
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 15, in init_db
+    conn = get_db_connection()
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 8, in get_db_connection
+    return sql.connect(
+           ~~~~~~~~~~~^
+        server_hostname=os.getenv("DATABRICKS_SERVER_HOSTNAME"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_path=os.getenv("DATABRICKS_HTTP_PATH"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        access_token=os.getenv("DATABRICKS_TOKEN")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\__init__.py", line 93, in connect
+    return Connection(server_hostname, http_path, access_token, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 319, in __init__
+    raise e
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 306, in __init__
+    self.session.open()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\session.py", line 135, in open
+    self._session_id = self.backend.open_session(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        session_configuration=self.session_configuration,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        catalog=self.catalog,
+        ^^^^^^^^^^^^^^^^^^^^^
+        schema=self.schema,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 599, in open_session
+    response = self.make_request(self._client.OpenSession, open_session_req)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 524, in make_request
+    self._handle_request_error(error_info, attempt, elapsed)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 349, in _handle_request_error
+    raise network_request_error
+databricks.sql.exc.RequestError: Error during request to server: : Invalid access token.. 
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d529-88bf-16ed-9d16-58b397f31041
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Database initialization failed: [UC_HIVE_METASTORE_DISABLED_EXCEPTION] The operation attempted to use Hive Metastore, which is disabled due to legacy access being turned off in your account or workspace. Please double check the default catalog in current session and default namespace setting. If you need to access the Hive Metastore, please ask your admin to set up Hive Metastore federation through Unity Catalog. SQLSTATE: 0A000
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 23, in init_db
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS hive_metastore.default.holiday_shifts_v3 (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ) USING DELTA
+        ^^^^^^^^^^^^^
+    """)
+    ^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [UC_HIVE_METASTORE_DISABLED_EXCEPTION] The operation attempted to use Hive Metastore, which is disabled due to legacy access being turned off in your account or workspace. Please double check the default catalog in current session and default namespace setting. If you need to access the Hive Metastore, please ask your admin to set up Hive Metastore federation through Unity Catalog. SQLSTATE: 0A000
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d529-a145-11f5-938f-f1470a298ec1
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+ERROR:root:Database initialization failed: [UC_HIVE_METASTORE_DISABLED_EXCEPTION] The operation attempted to use Hive Metastore, which is disabled due to legacy access being turned off in your account or workspace. Please double check the default catalog in current session and default namespace setting. If you need to access the Hive Metastore, please ask your admin to set up Hive Metastore federation through Unity Catalog. SQLSTATE: 0A000
+ERROR:root:Traceback (most recent call last):
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\main.py", line 43, in startup_event
+    init_db()
+    ~~~~~~~^^
+  File "D:\PC\Documents\Documentos\holiday shift system\backend\database.py", line 23, in init_db
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        CREATE TABLE IF NOT EXISTS hive_metastore.default.holiday_shifts_v3 (
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        ) USING DELTA
+        ^^^^^^^^^^^^^
+    """)
+    ^^^^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\telemetry\latency_logger.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\client.py", line 1319, in execute
+    self.active_result_set = self.backend.execute_command(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        operation=prepared_operation,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        row_limit=self.row_limit,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1054, in execute_command
+    execute_response, has_more_rows = self._handle_execute_response(
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        resp, cursor
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 1261, in _handle_execute_response
+    final_operation_state = self._wait_until_command_done(
+        resp.operationHandle,
+        resp.directResults and resp.directResults.operationStatus,
+    )
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 940, in _wait_until_command_done
+    self._check_command_not_in_error_or_closed_state(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        op_handle, initial_operation_status_resp
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\databricks\sql\backend\thrift_backend.py", line 633, in _check_command_not_in_error_or_closed_state
+    raise ServerOperationError(
+    ...<7 lines>...
+    )
+databricks.sql.exc.ServerOperationError: [UC_HIVE_METASTORE_DISABLED_EXCEPTION] The operation attempted to use Hive Metastore, which is disabled due to legacy access being turned off in your account or workspace. Please double check the default catalog in current session and default namespace setting. If you need to access the Hive Metastore, please ask your admin to set up Hive Metastore federation through Unity Catalog. SQLSTATE: 0A000
+
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:root:Database initialized (skipped)
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d52b-fd74-1afb-8eb1-d1ef1de579fa
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d52b-fd74-1afb-8eb1-d1ef1de579fa
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d52c-3a93-1ba3-bad4-8361ced30372
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d52c-3a93-1ba3-bad4-8361ced30372
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d52d-274d-1d50-8bb3-11442560ddb8
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d52d-274d-1d50-8bb3-11442560ddb8
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d52d-310f-13ca-b2c8-2b961fadebef
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d52d-310f-13ca-b2c8-2b961fadebef
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d52d-453d-1929-9f55-892e87cb50a9
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d52d-453d-1929-9f55-892e87cb50a9
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
+INFO:root:Starting main.py...
+INFO:root:FastAPI imported
+INFO:root:Database imported
+INFO:root:Models imported
+INFO:root:Auth imported
+INFO:root:Running uvicorn...
+INFO:root:Startup event triggered
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Successfully opened session 01f0d52d-55df-1a6c-a36b-a83cfe3b40f8
+INFO:databricks.sql.auth.retry:Received status code 200 for GET request
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:databricks.sql.session:Closing session 01f0d52d-55df-1a6c-a36b-a83cfe3b40f8
+INFO:databricks.sql.auth.retry:Received status code 200 for POST request
+INFO:databricks.sql.auth.thrift_http_client:HTTP Response with status code 200, message: OK
+INFO:root:Database initialized
