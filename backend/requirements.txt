@@ -6,9 +6,3 @@ pydantic-settings==2.1.0
 python-dotenv==1.0.0
 sqlalchemy==2.0.23
 python-multipart==0.0.6
-```
-
-No Render, adicione uma **Environment Variable**:
-```
-NAME_OF_VARIABLE: PYTHON_VERSION
-value: 3.11.0
