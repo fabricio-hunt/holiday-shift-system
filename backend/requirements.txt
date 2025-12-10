@@ -1,8 +1,14 @@
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
-databricks-sql-connector==3.0.2
+databricks-sql-connector==3.3.0
 pydantic==2.5.0
 pydantic-settings==2.1.0
 python-dotenv==1.0.0
 sqlalchemy==2.0.23
 python-multipart==0.0.6
+```
+
+No Render, adicione uma **Environment Variable**:
+```
+NAME_OF_VARIABLE: PYTHON_VERSION
+value: 3.11.0
