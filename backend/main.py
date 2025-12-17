@@ -1,4 +1,5 @@
 import sys
+import os
 import traceback
 import logging
 
@@ -25,8 +26,15 @@ try:
     origins = [
         "http://localhost:5173",  # Vue dev server
         "http://localhost:3000",
-        "*"
     ]
+    
+    # Add production frontend URL if set
+    if os.getenv("FRONTEND_URL"):
+        origins.append(os.getenv("FRONTEND_URL"))
+    
+    # Allow all if specifically requested (useful for testing but risky)
+    if os.getenv("ALLOW_ALL_ORIGINS", "false").lower() == "true":
+        origins = ["*"]
 
     app.add_middleware(
         CORSMiddleware,

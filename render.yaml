@@ -1,0 +1,42 @@
+services:
+  # Backend Service
+  - type: web
+    name: holiday-shift-backend
+    env: python
+    region: oregon
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: FRONTEND_URL
+        fromService:
+          type: static
+          name: holiday-shift-frontend
+          property: url
+      # Secrets (User must populate these in Render Dashboard)
+      - key: DATABRICKS_SERVER_HOSTNAME
+        sync: false
+      - key: DATABRICKS_HTTP_PATH
+        sync: false
+      - key: DATABRICKS_TOKEN
+        sync: false
+
+  # Frontend Service (Static Site)
+  - type: static
+    name: holiday-shift-frontend
+    env: static
+    region: oregon
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /**
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: holiday-shift-backend
+          property: url
