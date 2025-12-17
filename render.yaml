@@ -23,7 +23,7 @@ services:
         sync: false
 
   # Frontend Service (Static Site)
-  - type: static
+  - type: site
     name: holiday-shift-frontend
     env: static
     region: oregon
